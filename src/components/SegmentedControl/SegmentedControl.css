@@ -1,0 +1,34 @@
+.SegmentedControl {
+  height: 44px;
+  padding: 2px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: var(--field_background);
+}
+
+.SegmentedControl__in {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: all 100ms ease-out;
+  border-radius: inherit;
+}
+
+.SegmentedControl__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background-color: var(--background_content);
+  transition: transform 150ms;
+  transform-origin: 0 0;
+  border-radius: inherit;
+}
+
+/*
+ * iOS
+ */
+.SegmentedControl--ios {
+  border-radius: 10px;
+}

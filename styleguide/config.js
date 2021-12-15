@@ -267,6 +267,7 @@ const baseConfig = {
             "../src/components/File/File.tsx",
             "../src/components/DatePicker/DatePicker.tsx",
             "../src/components/SliderSwitch/SliderSwitch.tsx",
+            "../src/components/SegmentedControl/SegmentedControl.tsx",
           ],
         },
         {

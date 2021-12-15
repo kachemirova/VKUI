@@ -125,6 +125,7 @@
 @import "../components/SliderSwitch/SliderSwitch.css";
 @import "../components/Popper/Popper.css";
 @import "../components/CustomSelectDropdown/CustomSelectDropdown.css";
+@import "../components/SegmentedControl/SegmentedControl.css";
 
 /* Advertisement */
 @import "../components/PromoBanner/PromoBanner.css";

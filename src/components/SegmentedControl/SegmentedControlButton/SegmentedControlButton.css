@@ -1,0 +1,44 @@
+.SegmentedControlButton {
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: transparent;
+  border-radius: inherit;
+  color: var(--text_subhead);
+  transition: color 100ms ease-out;
+  user-select: none;
+  z-index: 1;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.SegmentedControlButton:focus,
+.SegmentedControlButton:active {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.SegmentedControlButton:hover {
+  color: var(--text_tertiary);
+  box-shadow: none;
+}
+
+.AppRoot--keyboard-input .SegmentedControlButton:focus,
+.AppRoot--keyboard-input .SegmentedControlButton:active,
+.SegmentedControlButton:focus:focus-visible {
+  box-shadow: none;
+}
+
+.SegmentedControlButton--selected {
+  color: var(--text_primary);
+}
+
+.SegmentedControlButton--selected:hover {
+  color: var(--header_alternate_tab_active_text);
+}
