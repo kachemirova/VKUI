@@ -9,6 +9,10 @@ import { ModalRootTouch } from "./ModalRoot";
 import { ModalRootDesktop } from "./ModalRootDesktop";
 
 export interface ModalRootProps extends AdaptivityProps {
+  /**
+   * Чтобы модалка отображалась только в десктоп-формате или только в формате для мобилок
+   */
+  mode?: 'desktop' | 'mobile';
   activeModal?: string | null;
 
   /**
@@ -20,12 +24,16 @@ export interface ModalRootProps extends AdaptivityProps {
 const ModalRootComponent: React.FC<ModalRootProps> = (
   props: ModalRootProps
 ) => {
-  const { viewWidth, viewHeight, hasMouse } = props;
+  const { viewWidth, viewHeight, hasMouse, mode } = props;
   const isDesktop =
     viewWidth >= ViewWidth.SMALL_TABLET &&
     (hasMouse || viewHeight >= ViewHeight.MEDIUM);
 
-  const RootComponent = isDesktop ? ModalRootDesktop : ModalRootTouch;
+  const RootComponent = (mode === 'mobile')
+    ? ModalRootTouch
+    : (mode === 'desktop' || isDesktop)
+      ? ModalRootDesktop
+      : ModalRootTouch;
 
   return <RootComponent {...props} />;
 };

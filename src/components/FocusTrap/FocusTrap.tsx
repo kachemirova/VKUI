@@ -36,7 +36,7 @@ export const FocusTrap: React.FC<FocusTrapProps> = ({
   const ref = useExternRef<HTMLElement>(getRootRef);
 
   const { document, window } = useDOM();
-  const activeElement = document.activeElement as HTMLElement;
+  const activeElement = typeof document !== undefined ? document.activeElement as HTMLElement : null;
 
   const [focusableNodes, setFocusableNodes] =
     React.useState<HTMLElement[]>(null);
@@ -93,7 +93,7 @@ export const FocusTrap: React.FC<FocusTrapProps> = ({
     }
   }, timeout);
   useIsomorphicLayoutEffect(() => {
-    if (restoreFocus) {
+    if (restoreFocus && activeElement) {
       setRestoreFocusTo(activeElement);
 
       return () => {
